@@ -39,6 +39,7 @@ int	main(int argc, char *argv[])
         exit_error(0);
     game_start(&data);
     generate_map(argv[1], &data);
+    check_map(data);
     while(i < data.map.row)
     {
         j = 0;

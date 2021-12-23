@@ -23,21 +23,7 @@ static int	checklen(char *line, int col)
 		return (0);
 	return (1);
 }
-/*
-static int	check_all_wall(char *line)
-{
-	int	i;
 
-	i = 0;
-	while (line[i] && line[i] != '\n')
-	{
-		if (line[i] != '1')
-			return (0);
-		i++;
-	}
-	return (1);
-}
-*/
 static int	fill_map(t_data *data, char *line)
 {
 	char	**map;
@@ -60,14 +46,6 @@ static int	fill_map(t_data *data, char *line)
 	return (0);
 }
 
-/*
-static int	check_map(t_data *data, char *line)
-{
-
-}
-*/
-
-
 void	generate_map(char *file, t_data *data)
 {
 	int		fd;
@@ -86,7 +64,7 @@ void	generate_map(char *file, t_data *data)
 	while (line)
 	{
 		if (!checklen(line, data->map.col))
-			exit_error(3);
+			exit_error(2);
 		fill_map(data, line);
 		line = get_next_line(fd);
 	}

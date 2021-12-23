@@ -73,5 +73,6 @@ void	exit_error(int error);
 char	*get_next_line(int fd);
 void	generate_map(char *file, t_data *data);
 void    game_start(t_data *data);
+void    check_map(t_data data);
 
 #endif 

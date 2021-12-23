@@ -14,6 +14,7 @@ MLXFLAGS = -lmlx -framework OpenGL -framework AppKit
 SRCS = main.c \
 	game_start.c \
 	generatemap.c \
+	check_map.c \
 	exit_errors.c \
 	gnl/get_next_line.c \
 	gnl/get_next_line_utils.c \
