@@ -12,7 +12,26 @@
 
 #include "so_long.h"
 
-static int	checklen(char *line, int col)
+static void check_file(char *file, t_data *data)
+{
+	int	i;
+	int	len;
+	char *ber;
+
+	ber = ".ber";
+	i = 3;
+	len = ft_strlen(file) - 1;
+	while (i >= 0)
+	{
+		if (file[len] != ber[i])
+			exit_error(1, data);
+		i--;
+		len--;
+	}
+}
+
+
+static void checklen(char *line, int col, t_data *data)
 {
 	int	len;
 
@@ -20,11 +39,10 @@ static int	checklen(char *line, int col)
 	if (ft_strchr(line, '\n'))
 		len--;
 	if (len != col)
-		return (0);
-	return (1);
+		exit_error(2, data);
 }
 
-static int	fill_map(t_data *data, char *line)
+static void	fill_map(t_data *data, char *line)
 {
 	char	**map;
 	size_t	i;
@@ -33,7 +51,7 @@ static int	fill_map(t_data *data, char *line)
 	data->map.row = data->map.row + 1;
 	map = malloc(sizeof(char *) * (data->map.row + 1));
 	if (!map)
-		exit_error(4);
+		exit_error(4, data);
 	while (data->map.array[i])
 	{
 		map[i] = data->map.array[i];
@@ -43,7 +61,7 @@ static int	fill_map(t_data *data, char *line)
 	map[i + 1] = NULL;
 	free(data->map.array);
 	data->map.array = map;
-	return (0);
+
 }
 
 void	generate_map(char *file, t_data *data)
@@ -51,20 +69,18 @@ void	generate_map(char *file, t_data *data)
 	int		fd;
 	char	*line;
 
-	if (!(ft_strnstr(file, ".ber", ft_strlen(file))))
-		exit_error(1);
+	check_file(file, data);	
 	fd = open(file, O_RDONLY);
 	if (fd < 0)
-		exit_error(1);
+		exit_error(1, data);
 	line = get_next_line(fd);
 	if (!line)
-		exit_error(2);
+		exit_error(2, data);
 	data->map.col = ft_strlen(line) - 1;
 	data->map.row = 0;
 	while (line)
 	{
-		if (!checklen(line, data->map.col))
-			exit_error(2);
+		checklen(line, data->map.col, data);
 		fill_map(data, line);
 		line = get_next_line(fd);
 	}

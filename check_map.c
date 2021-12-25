@@ -22,33 +22,33 @@ static int check_char(char c)
     return (1);
 }
 
-void    check_map(t_data data)
+void    check_map(t_data *data)
 {
 	int i;
 	int j;
 
 	i = 0;
-	while (i < data.map.row)
+	while (i < data->map.row)
 	{
 		j = 0;
-		while (j < data.map.col)
+		while (j < data->map.col)
 		{
-			if (!check_char(data.map.array[i][j]))
-				exit_error(2);
-			if (data.map.array[i][j] == 'P')
-				data.player.count += 1;
-			if (data.map.array[i][j] == 'C')
-				data.collec.count += 1;
-			if (data.map.array[i][j] == 'E')
-				data.exit.count	+= 1;
+			if (!check_char(data->map.array[i][j]))
+				exit_error(2, data);
+			if (data->map.array[i][j] == 'P')
+				data->player.count += 1;
+			if (data->map.array[i][j] == 'C')
+				data->collec.count += 1;
+			if (data->map.array[i][j] == 'E')
+				data->exit.count	+= 1;
 			j++;
 		}
-		if (data.map.array[i][0] != '1' || data.map.array[i][j - 1]  != '1')
-			exit_error(2);
+		if (data->map.array[i][0] != '1' || data->map.array[i][j - 1]  != '1')
+			exit_error(2, data);
 		i++;
 	}
-	if (!check_all_wall(data.map.array[0]) || !check_all_wall(data.map.array[i - 1]))
-		exit_error(2);
-	if (data.player.count != 1 || data.collec.count < 1 || data.exit.count < 1)
-		exit_error(2);
+	if (!check_all_wall(data->map.array[0]) || !check_all_wall(data->map.array[i - 1]))
+		exit_error(2, data);
+	if (data->player.count != 1 || data->collec.count < 1 || data->exit.count < 1)
+		exit_error(2, data);
 }

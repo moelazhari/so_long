@@ -13,8 +13,11 @@ MLXFLAGS = -lmlx -framework OpenGL -framework AppKit
 
 SRCS = main.c \
 	game_start.c \
-	generatemap.c \
+	generate_map.c \
 	check_map.c \
+	get_assets.c \
+	render_game.c \
+	move.c \
 	exit_errors.c \
 	gnl/get_next_line.c \
 	gnl/get_next_line_utils.c \
@@ -22,9 +25,6 @@ SRCS = main.c \
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME) clean
-
-%.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) -o $@ -c $<
 
 $(NAME): $(OBJS) $(LIBFT_LIB) $(HEADER) 
 	$(CC) $(CFLAGS) $(MLXFLAGS) $(LIBFT_LIB) $(OBJS) -o $(NAME)
