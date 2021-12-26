@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/12/26 17:20:29 by mazhari           #+#    #+#              #
+#    Updated: 2021/12/26 17:20:30 by mazhari          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = so_long
 
 HEADER = so_long.h\
@@ -24,9 +36,12 @@ SRCS = main.c \
 
 OBJS = $(SRCS:.c=.o)
 
-all: $(NAME) clean
+all: $(NAME) 
 
-$(NAME): $(OBJS) $(LIBFT_LIB) $(HEADER) 
+%.o: %.c $(HEADER)
+	$(CC) $(CFLAGS) -o $@ -c $<
+
+$(NAME): $(OBJS) $(LIBFT_LIB) $(HEADER)
 	$(CC) $(CFLAGS) $(MLXFLAGS) $(LIBFT_LIB) $(OBJS) -o $(NAME)
 
 $(LIBFT_LIB):

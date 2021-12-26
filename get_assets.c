@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_assets.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/26 17:20:15 by mazhari           #+#    #+#             */
+/*   Updated: 2021/12/26 17:20:16 by mazhari          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 static void	player(t_data *data)
@@ -18,7 +30,7 @@ static void	collect(t_data *data)
 			"assets/collec.xpm", &width, &height);
 }
 
-static void	wall(t_data *data)
+static void	 wall(t_data *data)
 {
 	int	width;
 	int	height;

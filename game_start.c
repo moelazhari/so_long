@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   game_start.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: obouadel <obouadel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/07 20:43:00 by obouadel          #+#    #+#             */
-/*   Updated: 2021/12/11 16:14:28 by obouadel         ###   ########.fr       */
+/*   Created: 2021/12/26 17:18:54 by mazhari           #+#    #+#             */
+/*   Updated: 2021/12/26 17:44:39 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "so_long.h"
 

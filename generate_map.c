@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   readmap.c                                          :+:      :+:    :+:   */
+/*   generate_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: obouadel <obouadel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 17:16:50 by obouadel          #+#    #+#             */
-/*   Updated: 2021/12/11 12:54:21 by obouadel         ###   ########.fr       */
+/*   Created: 2021/12/26 17:19:14 by mazhari           #+#    #+#             */
+/*   Updated: 2021/12/26 17:19:15 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "so_long.h"
 
-static void check_file(char *file, t_data *data)
+static void	check_file(char *file, t_data *data)
 {
-	int	i;
-	int	len;
-	char *ber;
+	int		i;
+	int		len;
+	char	*ber;
 
 	ber = ".ber";
 	i = 3;
@@ -30,8 +31,7 @@ static void check_file(char *file, t_data *data)
 	}
 }
 
-
-static void checklen(char *line, int col, t_data *data)
+static void	checklen(char *line, int col, t_data *data)
 {
 	int	len;
 
@@ -61,7 +61,6 @@ static void	fill_map(t_data *data, char *line)
 	map[i + 1] = NULL;
 	free(data->map.array);
 	data->map.array = map;
-
 }
 
 void	generate_map(char *file, t_data *data)
@@ -69,7 +68,7 @@ void	generate_map(char *file, t_data *data)
 	int		fd;
 	char	*line;
 
-	check_file(file, data);	
+	check_file(file, data);
 	fd = open(file, O_RDONLY);
 	if (fd < 0)
 		exit_error(1, data);

@@ -3,14 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   exit_errors.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgrissen <hgrissen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 13:40:46 by hgrissen          #+#    #+#             */
-/*   Updated: 2021/11/05 16:02:40 by hgrissen         ###   ########.fr       */
+/*   Created: 2021/12/26 17:18:38 by mazhari           #+#    #+#             */
+/*   Updated: 2021/12/26 17:18:39 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "so_long.h"
+
+static void	destroy_images(t_data *data)
+{
+	if (data->wall_img)
+		mlx_destroy_image(data->mlx, data->wall_img);
+	if (data->exit.img)
+		mlx_destroy_image(data->mlx, data->exit.img);
+	if (data->collec.img)
+		mlx_destroy_image(data->mlx, data->collec.img);
+	if (data->player.img)
+		mlx_destroy_image(data->mlx, data->player.img);
+	if (data->floor_img)
+		mlx_destroy_image(data->mlx, data->floor_img);
+	if (data->win)
+		mlx_destroy_window(data->mlx, data->win);
+}
 
 static void ft_free(t_data *data)
 {
@@ -27,9 +44,14 @@ static void ft_free(t_data *data)
 		free(data->map.array);
 }
 
+int destroy_notify(t_data *data)
+{
+	exit_error(6, data);
+	return 	(0);
+}
+
 void	exit_error(int error,t_data *data)
 {
-	ft_free(data);
 	if (error == 0)
 		printf("Argument Error\n");
 	if (error == 1)
@@ -41,7 +63,11 @@ void	exit_error(int error,t_data *data)
 	if (error == 4)
 		printf("malloc Error\n");
 	if (error == 5)
-		printf("you win");
+		printf("\n|!|!| you win |!|!|\n");
+	if (error == 6)
+		printf("\n|!|!| quit successfully |!|!|\n" );
+	ft_free(data);
+	destroy_images(data);
 	exit(0);
 }
 

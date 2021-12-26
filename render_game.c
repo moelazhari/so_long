@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   render_game.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/26 17:20:56 by mazhari           #+#    #+#             */
+/*   Updated: 2021/12/26 17:20:57 by mazhari          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	check_render(t_data *data, int i, int j)
@@ -20,12 +32,8 @@ void	check_render(t_data *data, int i, int j)
 			j * HEIGHT, i * WIDTH);
 	if (data->map.array[i][j] == 'E')
 	{
-		if (!data->collec.count)
-			mlx_put_image_to_window(data->mlx, data->win, data->exit.img,
-				j * HEIGHT, i * WIDTH);
-		else
-			mlx_put_image_to_window(data->mlx, data->win, data->wall_img,
-				j * HEIGHT, i * WIDTH);
+		mlx_put_image_to_window(data->mlx, data->win, data->exit.img,
+			j * HEIGHT, i * WIDTH);
 	}
 }
 

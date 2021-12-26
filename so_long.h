@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/26 17:21:06 by mazhari           #+#    #+#             */
+/*   Updated: 2021/12/26 17:21:17 by mazhari          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # ifndef SO_LONG_H
 # define SO_LONG_H
 
@@ -17,10 +29,7 @@
 #define DOWN 1
 #define LEFT 0
 #define RIGHT 2
-
-#define RED 0x00FF0000
-#define GREEN 0x0000FF00
-#define BLUE 0x000000FF
+#define ESC 53
 
 typedef struct map
 {
@@ -70,6 +79,6 @@ void	get_assets(t_data *data);
 void	render_game(t_data *data);
 int	    move(int key, t_data *data);
 void	exit_error(int error,t_data *data);
-
+int     destroy_notify(t_data *data);
 
 #endif

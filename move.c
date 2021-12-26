@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_handler.c                                     :+:      :+:    :+:   */
+/*   move.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: obouadel <obouadel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 15:49:42 by obouadel          #+#    #+#             */
-/*   Updated: 2021/12/11 12:52:08 by obouadel         ###   ########.fr       */
+/*   Created: 2021/12/26 17:20:38 by mazhari           #+#    #+#             */
+/*   Updated: 2021/12/26 17:20:45 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,8 @@ int	move(int key, t_data *data)
 			move_down(data, &count);
 	if (key == UP && data->map.array[prow - 1][pcol] != '1')
 			move_up(data, &count);
+	if (key == ESC)
+		exit_error(6, data);
 	if (count)
 		printf("Moves: [%d]\n", i++);
 	render_game(data);
