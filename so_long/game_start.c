@@ -6,7 +6,7 @@
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 17:18:54 by mazhari           #+#    #+#             */
-/*   Updated: 2021/12/27 16:37:16 by mazhari          ###   ########.fr       */
+/*   Updated: 2021/12/27 19:24:42 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	game_start(t_data *data)
 	data->map.array = ft_calloc(1, sizeof(char *));
 	if (!data->map.array)
 		exit_error(4, data);
+	data->map.row = 0;
+	data->map.col = 0;	
 	data->player.count = 0;
 	data->player.row = 0;
 	data->player.col = 0;

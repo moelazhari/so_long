@@ -6,7 +6,7 @@
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 17:18:54 by mazhari           #+#    #+#             */
-/*   Updated: 2021/12/27 17:11:58 by mazhari          ###   ########.fr       */
+/*   Updated: 2021/12/27 19:23:10 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,15 @@ void	game_start(t_data *data)
 	data->map.array = ft_calloc(1, sizeof(char *));
 	if (!data->map.array)
 		exit_error(4, data);
+	data->map.row = 0;
+	data->map.col = 0;
 	data->player.count = 0;
 	data->player.row = 0;
 	data->player.col = 0;
 	data->player.pos = 0;
 	data->collec.count = 0;
 	data->exit.count = 0;
+	data->move = 0;
 	data->exit.img_c = NULL;
 	data->exit.img_n_c = NULL;
 	data->floor_img = NULL;
@@ -30,6 +33,7 @@ void	game_start(t_data *data)
 	data->player.img_left = NULL;
 	data->wall_img = NULL;
 	data->collec.img = NULL;
+	data->enemy_img = NULL;
 	data->win = NULL;
 }
 

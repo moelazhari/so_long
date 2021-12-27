@@ -6,7 +6,7 @@
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 17:20:24 by mazhari           #+#    #+#             */
-/*   Updated: 2021/12/27 18:58:21 by mazhari          ###   ########.fr       */
+/*   Updated: 2021/12/27 19:10:47 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int	main(int argc, char *argv[])
 {
 	t_data	data;
 
+	game_start(&data);
 	if (argc != 2)
 		exit_error(0, &data);
-	game_start(&data);
 	generate_map(argv[1], &data);
 	check_map(&data);
 	generate_game(&data);

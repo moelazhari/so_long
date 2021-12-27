@@ -6,7 +6,7 @@
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 17:18:38 by mazhari           #+#    #+#             */
-/*   Updated: 2021/12/27 18:53:05 by mazhari          ###   ########.fr       */
+/*   Updated: 2021/12/27 19:21:44 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static void	ft_free(t_data *data)
 	
 	while (i < data->map.row)
 	{
-		if(data->map.array[i])
+		if (data->map.array[i])
 			free(data->map.array[i]);
 		i++;
 	}
@@ -76,4 +76,5 @@ void	exit_error(int error, t_data *data)
 		printf("\n|!|!| game over|!|!|\n");
 	ft_free(data);
 	destroy_images(data);
+	exit(0);
 }
