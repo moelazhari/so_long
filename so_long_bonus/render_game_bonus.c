@@ -6,7 +6,7 @@
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 17:20:56 by mazhari           #+#    #+#             */
-/*   Updated: 2021/12/27 18:45:14 by mazhari          ###   ########.fr       */
+/*   Updated: 2021/12/28 14:13:01 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ static void	print_moves(t_data *data, int nb)
 	moves = ft_itoa(nb);
 	mlx_string_put(data->mlx, data->win, WIDTH - 30, 0, GREEN, "Moves : ");
 	mlx_string_put(data->mlx, data->win, WIDTH + 50, 0, BLUE, moves);
+	free(moves);
 }
 
 void	render_game(t_data *data)

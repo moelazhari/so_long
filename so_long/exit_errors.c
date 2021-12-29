@@ -6,7 +6,7 @@
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 17:18:38 by mazhari           #+#    #+#             */
-/*   Updated: 2021/12/27 19:11:10 by mazhari          ###   ########.fr       */
+/*   Updated: 2021/12/28 12:31:42 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,12 @@ static void	ft_free(t_data *data)
 	while (i < data->map.row)
 	{
 		if (data->map.array[i])
-				free(data->map.array[i]);
+			free(data->map.array[i]);
 		i++;
 	}
 	if (data->map.array)
-			free(data->map.array);
+		free(data->map.array);
 }
-
 
 int	destroy_notify(t_data *data)
 {

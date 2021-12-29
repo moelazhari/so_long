@@ -6,7 +6,7 @@
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 17:19:14 by mazhari           #+#    #+#             */
-/*   Updated: 2021/12/27 17:13:23 by mazhari          ###   ########.fr       */
+/*   Updated: 2021/12/28 12:24:45 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ void	generate_map(char *file, t_data *data)
 	if (!line)
 		exit_error(2, data);
 	data->map.col = ft_strlen(line) - 1;
-	data->map.row = 0;
 	while (line)
 	{
 		checklen(line, data->map.col, data);

@@ -6,7 +6,7 @@
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 17:21:06 by mazhari           #+#    #+#             */
-/*   Updated: 2021/12/27 18:35:51 by mazhari          ###   ########.fr       */
+/*   Updated: 2021/12/28 13:02:06 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@
 
 typedef struct map
 {
+	char	**array;
 	int		col;
 	int		row;
-	char	**array;
 }			t_map;
 
 typedef struct s_player

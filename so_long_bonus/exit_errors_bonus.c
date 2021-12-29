@@ -6,7 +6,7 @@
 /*   By: mazhari <mazhari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 17:18:38 by mazhari           #+#    #+#             */
-/*   Updated: 2021/12/27 19:21:44 by mazhari          ###   ########.fr       */
+/*   Updated: 2021/12/28 12:34:13 by mazhari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ static void	ft_free(t_data *data)
 	int	i;
 
 	i = 0;
-	
 	while (i < data->map.row)
 	{
 		if (data->map.array[i])
