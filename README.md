@@ -4,6 +4,7 @@
 # so_long
 
 This project is a small 2D game with `MinilibX`. You'll learn about textures, sprites and tiles.
+read the [subject](https://cdn.intra.42.fr/pdf/pdf/34990/en.subject.pdf) for more infrmetion
                                                                                                                            
 |                      |                                                                                                                                     |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
@@ -13,8 +14,6 @@ This project is a small 2D game with `MinilibX`. You'll learn about textures, sp
 | **External functs.** | - `open`, `close`, `read`, `write`, `printf`, `malloc`, `free`, `perror`, `strerror`, `exit` <br> - All functions of the `MinilibX` |
 | **Libft authorized** | Yes                                                                                                                                 |
 | **Description**      | a small 2D game where a player escapes map after eating some collects before leaving the place.                                     |
-
-read the [subject](https://cdn.intra.42.fr/pdf/pdf/34990/en.subject.pdf) for more infrmetion
 
 ## Environment
 
