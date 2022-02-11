@@ -28,7 +28,7 @@ Developed and tested in this environment.
 To compile the mandatory version, run the lines below.
 
 ```shell
-$ git clone https://github.com/srngch/so_long
+$ git clone https://github.com/moelazhari/so_long.git
 $ cd so_long
 $ make all
 ```
@@ -37,14 +37,14 @@ $ make all
 To compile the bonus version,
 
 ```shell
-$ git clone https://github.com/srngch/so_long
+$ git clone https://github.com/moelazhari/so_long.git
 $ cd so_long
 $ make bonus
 ```
 or
 
 ```shell
-$ git clone https://github.com/srngch/so_long
+$ git clone https://github.com/moelazhari/so_long.git
 $ cd so_long_bonus
 $ make 
 ```
