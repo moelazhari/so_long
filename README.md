@@ -4,7 +4,7 @@
 # so_long
 
 This project is a small 2D game with `MinilibX`. You'll learn about textures, sprites and tiles.
-                                                                                                                           |
+                                                                                                                           
 |                      |                                                                                                                                     |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | **Program name**     | `so_long`                                                                                                                           |
